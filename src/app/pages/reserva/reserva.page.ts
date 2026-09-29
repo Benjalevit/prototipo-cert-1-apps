@@ -1,0 +1,51 @@
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import {
+  IonAvatar,
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonChip,
+  IonCol,
+  IonContent,
+  IonDatetime,
+  IonFooter,
+  IonGrid,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
+ 
+@Component({
+  selector: 'app-reserva',
+  standalone: true,
+  templateUrl: './reserva.page.html',
+  styleUrls: ['./reserva.page.scss'],
+  imports: [
+    RouterLink,
+    IonAvatar,
+    IonBackButton,
+    IonButton,
+    IonButtons,
+    IonChip,
+    IonCol,
+    IonContent,
+    IonDatetime,
+    IonFooter,
+    IonGrid,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonRow,
+    IonTitle,
+    IonToolbar,
+  ],
+})
+export class ReservaPage {}

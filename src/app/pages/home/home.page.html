@@ -1,78 +1,3 @@
-<!--
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
-<title>ParkSpot — inicio (Ionic)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
- Ionic Framework (Web Components) 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/css/ionic.bundle.css"/>
-<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.js"></script>
-
-<style>
-:root{
-  --ion-font-family:'Inter',sans-serif;
-  --ion-color-primary:#0B8457;
-  --ion-color-primary-rgb:11,132,87;
-  --ion-color-primary-contrast:#ffffff;
-  --ion-color-primary-contrast-rgb:255,255,255;
-  --ion-color-primary-shade:#066241;
-  --ion-color-primary-tint:#26935f;
-  --ion-background-color:#ffffff;
-  --ion-toolbar-background:#ffffff;
-  --ion-text-color:#16241C;
-  --emerald:#0B8457;--emerald-dark:#066241;--emerald-pale:#E4F3EB;
-  --ash:#7C917D;--ash-light:#DCE6DC;--ink:#16241C;--ink-soft:#57685B;
-  --border:#E1E8E1;--bg-soft:#F3F8F4;
-}
-h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif;}
-.brand-mark{width:30px;height:30px;border-radius:8px;background:var(--emerald);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;}
-
-/* ===== Hero / búsqueda ===== */
-.hero{background:var(--bg-soft);padding:20px 16px;}
-.hero h1{font-size:22px;font-weight:600;margin:0;}
-.hero p{margin:6px 0 16px;color:var(--ink-soft);font-size:14px;}
-.search-card{--padding-start:0;--padding-end:0;margin:0;}
-.chips-row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
-
-/* ===== Resultados ===== */
-.results-head{display:flex;align-items:baseline;justify-content:space-between;margin:18px 0 10px;}
-.results-head h2{font-size:17px;font-weight:600;margin:0;}
-.results-count{color:var(--ink-soft);font-size:12.5px;margin-top:2px;}
-ion-card.spot{margin:0 0 12px;}
-.spot-row{display:flex;gap:14px;padding:12px;}
-.spot-thumb{width:96px;height:84px;border-radius:8px;flex-shrink:0;background:var(--emerald-pale);position:relative;display:flex;align-items:center;justify-content:center;}
-.spot-body{flex:1;min-width:0;}
-.spot-title{font-size:14.5px;font-weight:600;}
-.spot-sub{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
-.spot-foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px;}
-.price{font-size:15.5px;font-weight:700;color:var(--emerald-dark);}
-.price span{font-size:11.5px;font-weight:500;color:var(--ink-soft);}
-
-/* ===== Mapa (ilustrativo, no hay componente Ionic de mapas) ===== */
-.map-panel{position:relative;overflow:hidden;border-radius:14px;background:var(--ash-light);height:260px;margin:6px 0 8px;}
-.map-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:34px 34px;opacity:.5;}
-.pin{position:absolute;transform:translate(-50%,-100%);}
-.pin-price{background:var(--emerald);color:#fff;font-size:10.5px;font-weight:700;padding:3px 7px;border-radius:12px;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.15);}
-.pin-price.full{background:#fff;color:var(--ash);border:1px solid var(--ash);}
-
-/* ===== Cómo funciona ===== */
-.how{padding:22px 0 8px;}
-.how h2{font-size:18px;font-weight:600;margin-bottom:6px;}
-
-</style>
-</head>
-<body>
-<ion-app>
--->
-
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -121,10 +46,10 @@ ion-card.spot{margin:0 0 12px;}
     </ion-card>
 
     <div class="chips-row">
-      <ion-chip color="primary" outline="true">Techado</ion-chip>
-      <ion-chip color="primary" outline="true">Con cámaras</ion-chip>
-      <ion-chip color="primary" outline="true">Disponible ahora</ion-chip>
-      <ion-chip color="primary" outline="true">Menos de $1.500 / hr</ion-chip>
+      <ion-chip color="primary" outline>Techado</ion-chip>
+      <ion-chip color="primary" outline>Con cámaras</ion-chip>
+      <ion-chip color="primary" outline>Disponible ahora</ion-chip>
+      <ion-chip color="primary" outline>Menos de $1.500 / hr</ion-chip>
     </div>
   </div>
 
@@ -159,12 +84,12 @@ ion-card.spot{margin:0 0 12px;}
           <div class="spot-title">Estacionamiento subterráneo Av. Providencia</div>
           <div class="spot-sub">A 220 m de Metro Los Leones</div>
           <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;">
-            <ion-chip outline="true" style="font-size:11px;height:22px;">Techado</ion-chip>
-            <ion-chip outline="true" style="font-size:11px;height:22px;">Cámaras 24/7</ion-chip>
+            <ion-chip outline style="font-size:11px;height:22px;">Techado</ion-chip>
+            <ion-chip outline style="font-size:11px;height:22px;">Cámaras 24/7</ion-chip>
           </div>
           <div class="spot-foot">
             <div class="price">$1.200 <span>/ hora</span></div>
-            <ion-button size="small" fill="outline" color="primary">Reservar</ion-button>
+            <ion-button size="small" fill="outline" color="primary" routerLink="/detalle">Reservar</ion-button>
           </div>
         </div>
       </div>
@@ -180,8 +105,8 @@ ion-card.spot{margin:0 0 12px;}
           <div class="spot-title">Patio particular, calle Bilbao</div>
           <div class="spot-sub">A 400 m de Parque Bustamante</div>
           <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;">
-            <ion-chip outline="true" style="font-size:11px;height:22px;">Al aire libre</ion-chip>
-            <ion-chip outline="true" style="font-size:11px;height:22px;">Acceso 24/7</ion-chip>
+            <ion-chip outline style="font-size:11px;height:22px;">Al aire libre</ion-chip>
+            <ion-chip outline style="font-size:11px;height:22px;">Acceso 24/7</ion-chip>
           </div>
           <div class="spot-foot">
             <div class="price">$700 <span>/ hora</span></div>
@@ -201,8 +126,8 @@ ion-card.spot{margin:0 0 12px;}
           <div class="spot-title">Edificio Costanera, box subterráneo</div>
           <div class="spot-sub">A 180 m de Costanera Center</div>
           <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;">
-            <ion-chip outline="true" style="font-size:11px;height:22px;">Techado</ion-chip>
-            <ion-chip outline="true" style="font-size:11px;height:22px;">Con carga eléctrica</ion-chip>
+            <ion-chip outline style="font-size:11px;height:22px;">Techado</ion-chip>
+            <ion-chip outline style="font-size:11px;height:22px;">Con carga eléctrica</ion-chip>
           </div>
           <div class="spot-foot">
             <div class="price">$25.000 <span>/ mes</span></div>
@@ -222,12 +147,12 @@ ion-card.spot{margin:0 0 12px;}
           <div class="spot-title">Galpón Suecia, sector poniente</div>
           <div class="spot-sub">A 650 m de Plaza Italia</div>
           <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;">
-            <ion-chip outline="true" style="font-size:11px;height:22px;">Techado</ion-chip>
-            <ion-chip outline="true" style="font-size:11px;height:22px;">Moto y auto</ion-chip>
+            <ion-chip outline style="font-size:11px;height:22px;">Techado</ion-chip>
+            <ion-chip outline style="font-size:11px;height:22px;">Moto y auto</ion-chip>
           </div>
           <div class="spot-foot">
             <div class="price">$900 <span>/ hora</span></div>
-            <ion-button size="small" fill="outline" color="medium" disabled="true">Notificarme</ion-button>
+            <ion-button size="small" fill="outline" color="medium" disabled>Notificarme</ion-button>
           </div>
         </div>
       </div>
@@ -272,7 +197,7 @@ ion-card.spot{margin:0 0 12px;}
 </ion-content>
 
 <ion-tab-bar slot="bottom" color="light">
-  <ion-tab-button tab="buscar" [selected]="true">
+  <ion-tab-button tab="buscar" selected>
     <ion-icon name="search"></ion-icon>
     <ion-label>Buscar</ion-label>
   </ion-tab-button>
@@ -289,9 +214,3 @@ ion-card.spot{margin:0 0 12px;}
     <ion-label>Perfil</ion-label>
   </ion-tab-button>
 </ion-tab-bar>
-
-<!--
-</ion-app>
-</body>
-</html>
--->

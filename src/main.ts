@@ -29,6 +29,18 @@ bootstrapApplication(App, {
         loadComponent: () =>
           import('./app/pages/home/home.page').then((m) => m.HomePage),
       },
+      {
+        path: 'detalle',
+        loadComponent: () =>
+          import('./app/pages/detalle/detalle.page')
+            .then((m) => m.DetallePage),
+      },
+      {
+        path: 'reserva',
+        loadComponent: () =>
+          import('./app/pages/reserva/reserva.page')
+            .then((m) => m.ReservaPage),
+      },
     ]),
   ],
 });
