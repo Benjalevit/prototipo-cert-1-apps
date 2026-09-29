@@ -17,9 +17,9 @@ import {
     </ion-app>
   `,
 })
-export class App {}
+export class AppComponent {}
 
-bootstrapApplication(App, {
+bootstrapApplication(AppComponent, {
   providers: [
     provideIonicAngular(),
     provideRouter([
@@ -32,15 +32,44 @@ bootstrapApplication(App, {
       {
         path: 'detalle',
         loadComponent: () =>
-          import('./app/pages/detalle/detalle.page')
-            .then((m) => m.DetallePage),
+          import('./app/pages/detalle/detalle.page').then((m) => m.DetallePage),
       },
       {
         path: 'reserva',
         loadComponent: () =>
-          import('./app/pages/reserva/reserva.page')
-            .then((m) => m.ReservaPage),
+          import('./app/pages/reserva/reserva.page').then((m) => m.ReservaPage),
       },
+      {
+        path: 'pago',
+        loadComponent: () =>
+          import('./app/pages/pago/pago.page').then((m) => m.PagoPage),
+      },
+      {
+        path: 'activa',
+        loadComponent: () =>
+          import('./app/pages/activa/activa.page').then((m) => m.ActivaPage),
+      },
+      {
+        path: 'publicar',
+        loadComponent: () =>
+          import('./app/pages/publicar/publicar.page').then((m) => m.PublicarPage),
+      },
+      {
+        path: 'historial',
+        loadComponent: () =>
+          import('./app/pages/historial/historial.page').then((m) => m.HistorialPage),
+      },
+      {
+        path: 'perfil',
+        loadComponent: () =>
+          import('./app/pages/perfil/perfil.page').then((m) => m.PerfilPage),
+      },
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./app/pages/dashboard/dashboard.page').then((m) => m.DashboardPage),
+      },
+      { path: '**', redirectTo: 'home' },
     ]),
   ],
 });

@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
-<title>ParkSpot — perfil y notificaciones (Ionic)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/css/ionic.bundle.css"/>
-<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.js"></script>
-<style>
-:root{
-  --ion-font-family:'Inter',sans-serif;
-  --ion-color-primary:#0B8457;--ion-color-primary-rgb:11,132,87;--ion-color-primary-contrast:#ffffff;
-  --ion-color-primary-contrast-rgb:255,255,255;--ion-color-primary-shade:#066241;--ion-color-primary-tint:#26935f;
-  --ion-background-color:#ffffff;--ion-text-color:#16241C;
-  --emerald:#0B8457;--emerald-dark:#066241;--emerald-pale:#E4F3EB;
-  --ash:#7C917D;--ash-light:#DCE6DC;--ink:#16241C;--ink-soft:#57685B;--border:#E1E8E1;--bg-soft:#F3F8F4;
-}
-.avatar-big{width:64px;height:64px;border-radius:50%;background:var(--emerald-pale);color:var(--emerald-dark);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600;margin:0 auto 10px;font-family:'Space Grotesk',sans-serif;}
-.vehicle-icon,.pay-icon{width:36px;height:36px;border-radius:8px;background:var(--emerald-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.notif-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.notif-icon.reminder,.notif-icon.confirm{background:var(--emerald-pale);}
-.notif-icon.promo{background:var(--ash-light);}
-</style>
-</head>
-<body>
-<ion-app>
-
-  <ion-header class="ion-no-border">
+<ion-header class="ion-no-border">
     <ion-toolbar>
       <ion-title>Mi perfil</ion-title>
     </ion-toolbar>
@@ -148,12 +115,8 @@
   </ion-content>
 
   <ion-tab-bar slot="bottom" color="light">
-    <ion-tab-button tab="buscar"><ion-icon name="search-outline"></ion-icon><ion-label>Buscar</ion-label></ion-tab-button>
-    <ion-tab-button tab="publicar"><ion-icon name="add-circle-outline"></ion-icon><ion-label>Publicar</ion-label></ion-tab-button>
-    <ion-tab-button tab="reservas"><ion-icon name="time-outline"></ion-icon><ion-label>Reservas</ion-label></ion-tab-button>
-    <ion-tab-button tab="perfil" selected><ion-icon name="person"></ion-icon><ion-label>Perfil</ion-label></ion-tab-button>
+    <ion-tab-button tab="buscar" routerLink="/home"><ion-icon name="search-outline"></ion-icon><ion-label>Buscar</ion-label></ion-tab-button>
+    <ion-tab-button tab="publicar" routerLink="/publicar"><ion-icon name="add-circle-outline"></ion-icon><ion-label>Publicar</ion-label></ion-tab-button>
+    <ion-tab-button tab="reservas" routerLink="/historial"><ion-icon name="time-outline"></ion-icon><ion-label>Reservas</ion-label></ion-tab-button>
+    <ion-tab-button tab="perfil" routerLink="/perfil" [selected]="true"><ion-icon name="person"></ion-icon><ion-label>Perfil</ion-label></ion-tab-button>
   </ion-tab-bar>
-
-</ion-app>
-</body>
-</html>

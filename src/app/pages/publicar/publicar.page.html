@@ -1,46 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
-<title>ParkSpot — publica tu espacio (Ionic)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/css/ionic.bundle.css"/>
-<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.js"></script>
-<style>
-:root{
-  --ion-font-family:'Inter',sans-serif;
-  --ion-color-primary:#0B8457;--ion-color-primary-rgb:11,132,87;--ion-color-primary-contrast:#ffffff;
-  --ion-color-primary-contrast-rgb:255,255,255;--ion-color-primary-shade:#066241;--ion-color-primary-tint:#26935f;
-  --ion-background-color:#ffffff;--ion-text-color:#16241C;
-  --emerald:#0B8457;--emerald-dark:#066241;--emerald-pale:#E4F3EB;
-  --ash:#7C917D;--ash-light:#DCE6DC;--ink:#16241C;--ink-soft:#57685B;--border:#E1E8E1;--bg-soft:#F3F8F4;
-}
-h1,h2{font-family:'Space Grotesk',sans-serif;}
-.card-hint{font-size:12px;color:var(--ink-soft);margin:0 16px 6px;}
-.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 16px 16px;}
-.photo-slot{aspect-ratio:1;border:1.5px dashed var(--border);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--ash);font-size:9.5px;text-align:center;}
-.photo-slot.filled{border-style:solid;background:var(--emerald-pale);color:var(--emerald-dark);position:relative;}
-.cover-tag{position:absolute;top:4px;left:4px;background:var(--emerald);color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:5px;}
-.price-card{border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;flex:1;}
-.price-card.active{border-color:var(--emerald);background:var(--emerald-pale);}
-.price-card .label{font-size:11px;color:var(--ink-soft);font-weight:600;margin-bottom:6px;}
-.price-card .val{font-size:15px;font-weight:700;}
-.preview-photo{height:110px;background:var(--emerald-pale);display:flex;align-items:center;justify-content:center;position:relative;}
-</style>
-</head>
-<body>
-<ion-app>
-
-  <ion-header class="ion-no-border">
+<ion-header class="ion-no-border">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-back-button default-href="parkspot_mockup.html" color="dark"></ion-back-button>
+        <ion-back-button defaultHref="/home" color="dark"></ion-back-button>
       </ion-buttons>
       <ion-title size="small">Publica tu espacio</ion-title>
     </ion-toolbar>
@@ -170,7 +131,3 @@ h1,h2{font-family:'Space Grotesk',sans-serif;}
       </div>
     </ion-toolbar>
   </ion-footer>
-
-</ion-app>
-</body>
-</html>

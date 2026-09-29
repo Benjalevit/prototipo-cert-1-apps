@@ -1,46 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
-<title>ParkSpot — pago y checkout (Ionic)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/css/ionic.bundle.css"/>
-<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.js"></script>
-<style>
-:root{
-  --ion-font-family:'Inter',sans-serif;
-  --ion-color-primary:#0B8457;--ion-color-primary-rgb:11,132,87;--ion-color-primary-contrast:#ffffff;
-  --ion-color-primary-contrast-rgb:255,255,255;--ion-color-primary-shade:#066241;--ion-color-primary-tint:#26935f;
-  --ion-background-color:#ffffff;--ion-text-color:#16241C;
-  --emerald:#0B8457;--emerald-dark:#066241;--emerald-pale:#E4F3EB;
-  --ash:#7C917D;--ash-light:#DCE6DC;--ink:#16241C;--ink-soft:#57685B;--border:#E1E8E1;--bg-soft:#F3F8F4;
-}
-h1,h2{font-family:'Space Grotesk',sans-serif;}
-.summary-row{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);margin:6px 0;}
-.summary-row b{color:var(--ink);font-weight:500;}
-.summary-total{display:flex;justify-content:space-between;font-size:16px;font-weight:600;}
-.summary-total span:last-child{color:var(--emerald-dark);}
-.confirm-card{border-radius:16px;background:var(--bg-soft);padding:24px;text-align:center;}
-.confirm-check{width:48px;height:48px;border-radius:50%;background:var(--emerald);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
-.qr-box{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;margin:16px auto 0;max-width:190px;}
-.qr-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:2px;width:150px;height:150px;margin:0 auto 10px;}
-.qr-cell{background:#fff;}
-.qr-cell.on{background:var(--ink);}
-</style>
-</head>
-<body>
-<ion-app>
-
-  <ion-header class="ion-no-border">
+<ion-header class="ion-no-border">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-back-button default-href="parkspot_reserva.html" color="dark"></ion-back-button>
+        <ion-back-button defaultHref="/reserva" color="dark"></ion-back-button>
       </ion-buttons>
       <ion-title size="small">Pago</ion-title>
     </ion-toolbar>
@@ -160,11 +121,7 @@ h1,h2{font-family:'Space Grotesk',sans-serif;}
   <ion-footer class="ion-no-border">
     <ion-toolbar>
       <div class="ion-padding-horizontal ion-padding-bottom">
-        <ion-button expand="block" color="primary" href="parkspot_activa.html">Pagar $5.100</ion-button>
+        <ion-button expand="block" color="primary" routerLink="/activa">Pagar $5.100</ion-button>
       </div>
     </ion-toolbar>
   </ion-footer>
-
-</ion-app>
-</body>
-</html>

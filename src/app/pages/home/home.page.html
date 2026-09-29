@@ -197,19 +197,19 @@
 </ion-content>
 
 <ion-tab-bar slot="bottom" color="light">
-  <ion-tab-button tab="buscar" selected>
+  <ion-tab-button tab="buscar" routerLink="/home" [selected]="true">
     <ion-icon name="search"></ion-icon>
     <ion-label>Buscar</ion-label>
   </ion-tab-button>
-  <ion-tab-button tab="publicar">
+  <ion-tab-button tab="publicar" routerLink="/publicar">
     <ion-icon name="add-circle-outline"></ion-icon>
     <ion-label>Publicar</ion-label>
   </ion-tab-button>
-  <ion-tab-button tab="reservas">
+  <ion-tab-button tab="reservas" routerLink="/historial">
     <ion-icon name="time-outline"></ion-icon>
     <ion-label>Reservas</ion-label>
   </ion-tab-button>
-  <ion-tab-button tab="perfil">
+  <ion-tab-button tab="perfil" routerLink="/perfil">
     <ion-icon name="person-outline"></ion-icon>
     <ion-label>Perfil</ion-label>
   </ion-tab-button>
