@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+<title>ParkSpot — perfil y notificaciones (Ionic)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/css/ionic.bundle.css"/>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.js"></script>
+<style>
+:root{
+  --ion-font-family:'Inter',sans-serif;
+  --ion-color-primary:#0B8457;--ion-color-primary-rgb:11,132,87;--ion-color-primary-contrast:#ffffff;
+  --ion-color-primary-contrast-rgb:255,255,255;--ion-color-primary-shade:#066241;--ion-color-primary-tint:#26935f;
+  --ion-background-color:#ffffff;--ion-text-color:#16241C;
+  --emerald:#0B8457;--emerald-dark:#066241;--emerald-pale:#E4F3EB;
+  --ash:#7C917D;--ash-light:#DCE6DC;--ink:#16241C;--ink-soft:#57685B;--border:#E1E8E1;--bg-soft:#F3F8F4;
+}
+.avatar-big{width:64px;height:64px;border-radius:50%;background:var(--emerald-pale);color:var(--emerald-dark);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600;margin:0 auto 10px;font-family:'Space Grotesk',sans-serif;}
+.vehicle-icon,.pay-icon{width:36px;height:36px;border-radius:8px;background:var(--emerald-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.notif-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.notif-icon.reminder,.notif-icon.confirm{background:var(--emerald-pale);}
+.notif-icon.promo{background:var(--ash-light);}
+</style>
+</head>
+<body>
+<ion-app>
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>Mi perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="ion-padding">
+
+      <ion-card class="ion-text-center">
+        <ion-card-content>
+          <div class="avatar-big">BB</div>
+          <div style="font-size:15px;font-weight:600;">Benjamín Bravo</div>
+          <div style="font-size:12.5px;color:var(--ink-soft);margin-top:2px;">benjamin.bravo@correo.cl</div>
+          <div style="font-size:11px;color:var(--ash);margin-top:8px;">Miembro desde marzo 2025</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-list style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+        <ion-item button lines="full" color="light"><ion-icon slot="start" name="person-outline" color="primary"></ion-icon><ion-label>Datos personales</ion-label></ion-item>
+        <ion-item button lines="full"><ion-icon slot="start" name="car-outline"></ion-icon><ion-label>Vehículos</ion-label></ion-item>
+        <ion-item button lines="full"><ion-icon slot="start" name="card-outline"></ion-icon><ion-label>Métodos de pago</ion-label></ion-item>
+        <ion-item button lines="full"><ion-icon slot="start" name="notifications-outline"></ion-icon><ion-label>Notificaciones</ion-label></ion-item>
+        <ion-item button lines="none"><ion-icon slot="start" name="shield-checkmark-outline"></ion-icon><ion-label>Seguridad</ion-label></ion-item>
+      </ion-list>
+
+      <ion-card>
+        <ion-card-header style="display:flex;justify-content:space-between;align-items:center;">
+          <ion-card-title style="font-size:15px;">Datos personales</ion-card-title>
+        </ion-card-header>
+        <ion-list lines="full">
+          <ion-item><ion-label position="stacked">Nombre</ion-label><ion-input value="Benjamín Bravo"></ion-input></ion-item>
+          <ion-item><ion-label position="stacked">Teléfono</ion-label><ion-input value="+56 9 8123 4567"></ion-input></ion-item>
+          <ion-item lines="none"><ion-label position="stacked">Correo</ion-label><ion-input value="benjamin.bravo@correo.cl"></ion-input></ion-item>
+        </ion-list>
+        <ion-button expand="block" fill="clear" color="primary" size="small">Guardar cambios</ion-button>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Vehículos guardados</ion-card-title></ion-card-header>
+        <ion-list lines="full">
+          <ion-item>
+            <div class="vehicle-icon" slot="start"><ion-icon name="car-sport-outline" style="color:var(--emerald);"></ion-icon></div>
+            <ion-label><h3 style="font-size:13.5px;font-weight:600;">Toyota Yaris gris</h3><p style="font-size:12px;color:var(--ink-soft);">Patente RXFT-32</p></ion-label>
+            <ion-badge slot="end" color="tertiary" style="--background:var(--emerald-pale);--color:var(--emerald-dark);">Predeterminado</ion-badge>
+          </ion-item>
+          <ion-item lines="none">
+            <div class="vehicle-icon" slot="start"><ion-icon name="bus-outline" style="color:var(--emerald);"></ion-icon></div>
+            <ion-label><h3 style="font-size:13.5px;font-weight:600;">Suzuki Jimny negra</h3><p style="font-size:12px;color:var(--ink-soft);">Patente HJKL-89</p></ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" fill="clear" color="primary" size="small">
+          <ion-icon slot="start" name="add-outline"></ion-icon>Agregar vehículo
+        </ion-button>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Métodos de pago</ion-card-title></ion-card-header>
+        <ion-list lines="full">
+          <ion-item>
+            <div class="pay-icon" slot="start" style="font-size:9px;font-weight:700;">VISA</div>
+            <ion-label><h3 style="font-size:13.5px;font-weight:600;">Visa terminada en 3456</h3><p style="font-size:12px;color:var(--ink-soft);">Vence 08/29</p></ion-label>
+            <ion-badge slot="end" color="tertiary" style="--background:var(--emerald-pale);--color:var(--emerald-dark);">Predeterminada</ion-badge>
+          </ion-item>
+          <ion-item lines="none">
+            <div class="pay-icon" slot="start" style="font-size:9px;font-weight:700;">WP</div>
+            <ion-label><h3 style="font-size:13.5px;font-weight:600;">Webpay</h3><p style="font-size:12px;color:var(--ink-soft);">Sin datos guardados</p></ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" fill="clear" color="primary" size="small">
+          <ion-icon slot="start" name="add-outline"></ion-icon>Agregar método
+        </ion-button>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Centro de notificaciones</ion-card-title></ion-card-header>
+        <ion-segment value="todas" style="padding:0 16px 12px;">
+          <ion-segment-button value="todas"><ion-label>Todas</ion-label></ion-segment-button>
+          <ion-segment-button value="reservas"><ion-label>Reservas</ion-label></ion-segment-button>
+          <ion-segment-button value="promos"><ion-label>Promociones</ion-label></ion-segment-button>
+        </ion-segment>
+
+        <ion-list lines="full">
+          <ion-item style="--background:var(--bg-soft);">
+            <div class="notif-icon reminder" slot="start"><ion-icon name="time-outline" color="primary"></ion-icon></div>
+            <ion-label class="ion-text-wrap"><p style="font-size:13.5px;color:var(--ink);">Tu reserva en <b>Av. Providencia 1650</b> termina en 30 minutos.</p><p style="font-size:11px;color:var(--ink-soft);">Hace 5 min</p></ion-label>
+            <div slot="end" style="width:7px;height:7px;border-radius:50%;background:var(--emerald);"></div>
+          </ion-item>
+          <ion-item>
+            <div class="notif-icon confirm" slot="start"><ion-icon name="checkmark-outline" color="primary"></ion-icon></div>
+            <ion-label class="ion-text-wrap"><p style="font-size:13.5px;color:var(--ink);">Reserva confirmada para el <b>viernes 12 de septiembre</b>, 09:00 — 18:00.</p><p style="font-size:11px;color:var(--ink-soft);">Hoy, 10:42</p></ion-label>
+          </ion-item>
+          <ion-item>
+            <div class="notif-icon promo" slot="start"><ion-icon name="pricetag-outline" color="medium"></ion-icon></div>
+            <ion-label class="ion-text-wrap"><p style="font-size:13.5px;color:var(--ink);">15% de descuento en tu próxima reserva por ser usuario frecuente.</p><p style="font-size:11px;color:var(--ink-soft);">Ayer</p></ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <div class="notif-icon confirm" slot="start"><ion-icon name="checkmark-outline" color="primary"></ion-icon></div>
+            <ion-label class="ion-text-wrap"><p style="font-size:13.5px;color:var(--ink);">Pago de <b>$5.100</b> procesado correctamente.</p><p style="font-size:11px;color:var(--ink-soft);">Lunes, 14:03</p></ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Preferencias de notificación</ion-card-title></ion-card-header>
+        <ion-list lines="full">
+          <ion-item><ion-label>Recordatorios de reserva</ion-label><ion-toggle slot="end" checked="true" color="primary"></ion-toggle></ion-item>
+          <ion-item><ion-label>Confirmaciones de pago</ion-label><ion-toggle slot="end" checked="true" color="primary"></ion-toggle></ion-item>
+          <ion-item><ion-label>Promociones y novedades</ion-label><ion-toggle slot="end" color="primary"></ion-toggle></ion-item>
+          <ion-item lines="none"><ion-label>Notificaciones por correo</ion-label><ion-toggle slot="end" checked="true" color="primary"></ion-toggle></ion-item>
+        </ion-list>
+      </ion-card>
+
+    </div>
+  </ion-content>
+
+  <ion-tab-bar slot="bottom" color="light">
+    <ion-tab-button tab="buscar"><ion-icon name="search-outline"></ion-icon><ion-label>Buscar</ion-label></ion-tab-button>
+    <ion-tab-button tab="publicar"><ion-icon name="add-circle-outline"></ion-icon><ion-label>Publicar</ion-label></ion-tab-button>
+    <ion-tab-button tab="reservas"><ion-icon name="time-outline"></ion-icon><ion-label>Reservas</ion-label></ion-tab-button>
+    <ion-tab-button tab="perfil" selected><ion-icon name="person"></ion-icon><ion-label>Perfil</ion-label></ion-tab-button>
+  </ion-tab-bar>
+
+</ion-app>
+</body>
+</html>

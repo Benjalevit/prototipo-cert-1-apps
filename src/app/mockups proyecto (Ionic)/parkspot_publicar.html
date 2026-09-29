@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+<title>ParkSpot — publica tu espacio (Ionic)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/css/ionic.bundle.css"/>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.js"></script>
+<style>
+:root{
+  --ion-font-family:'Inter',sans-serif;
+  --ion-color-primary:#0B8457;--ion-color-primary-rgb:11,132,87;--ion-color-primary-contrast:#ffffff;
+  --ion-color-primary-contrast-rgb:255,255,255;--ion-color-primary-shade:#066241;--ion-color-primary-tint:#26935f;
+  --ion-background-color:#ffffff;--ion-text-color:#16241C;
+  --emerald:#0B8457;--emerald-dark:#066241;--emerald-pale:#E4F3EB;
+  --ash:#7C917D;--ash-light:#DCE6DC;--ink:#16241C;--ink-soft:#57685B;--border:#E1E8E1;--bg-soft:#F3F8F4;
+}
+h1,h2{font-family:'Space Grotesk',sans-serif;}
+.card-hint{font-size:12px;color:var(--ink-soft);margin:0 16px 6px;}
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 16px 16px;}
+.photo-slot{aspect-ratio:1;border:1.5px dashed var(--border);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--ash);font-size:9.5px;text-align:center;}
+.photo-slot.filled{border-style:solid;background:var(--emerald-pale);color:var(--emerald-dark);position:relative;}
+.cover-tag{position:absolute;top:4px;left:4px;background:var(--emerald);color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:5px;}
+.price-card{border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;flex:1;}
+.price-card.active{border-color:var(--emerald);background:var(--emerald-pale);}
+.price-card .label{font-size:11px;color:var(--ink-soft);font-weight:600;margin-bottom:6px;}
+.price-card .val{font-size:15px;font-weight:700;}
+.preview-photo{height:110px;background:var(--emerald-pale);display:flex;align-items:center;justify-content:center;position:relative;}
+</style>
+</head>
+<body>
+<ion-app>
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="parkspot_mockup.html" color="dark"></ion-back-button>
+      </ion-buttons>
+      <ion-title size="small">Publica tu espacio</ion-title>
+    </ion-toolbar>
+    <ion-progress-bar value="0.33" color="primary"></ion-progress-bar>
+  </ion-header>
+
+  <ion-content>
+    <div class="ion-padding">
+      <p style="font-size:13.5px;color:var(--ink-soft);margin-top:0;">Genera ingresos arrendando tu estacionamiento cuando no lo uses.</p>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Fotos del espacio</ion-card-title></ion-card-header>
+        <div class="card-hint">Sube al menos 3 fotos. La primera será la portada.</div>
+        <div class="photo-grid">
+          <div class="photo-slot filled"><span class="cover-tag">Portada</span><ion-icon name="image-outline" style="font-size:20px;"></ion-icon></div>
+          <div class="photo-slot filled"><ion-icon name="image-outline" style="font-size:20px;"></ion-icon></div>
+          <div class="photo-slot filled"><ion-icon name="image-outline" style="font-size:20px;"></ion-icon></div>
+          <div class="photo-slot"><ion-icon name="add-outline" style="font-size:18px;"></ion-icon>Agregar</div>
+        </div>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Ubicación</ion-card-title></ion-card-header>
+        <div class="card-hint">La dirección exacta solo se muestra a quienes reserven.</div>
+        <ion-list lines="full">
+          <ion-item>
+            <ion-label position="stacked">Dirección</ion-label>
+            <ion-input value="Av. Providencia 1650, Providencia"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Comuna</ion-label>
+            <ion-input value="Providencia"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="stacked">Referencia de acceso</ion-label>
+            <ion-input placeholder="Ej: portón azul junto a la farmacia"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Tipo de vehículo permitido</ion-card-title></ion-card-header>
+        <div class="card-hint">Selecciona todos los que apliquen para tu espacio.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;padding:0 16px 16px;">
+          <ion-chip color="primary">Auto <ion-icon name="checkmark-circle" style="margin-left:4px;"></ion-icon></ion-chip>
+          <ion-chip color="primary">Camioneta <ion-icon name="checkmark-circle" style="margin-left:4px;"></ion-icon></ion-chip>
+          <ion-chip outline>Moto</ion-chip>
+          <ion-chip outline>Furgón / van</ion-chip>
+        </div>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Características</ion-card-title></ion-card-header>
+        <ion-list lines="none">
+          <ion-item><ion-checkbox slot="start" checked="true" color="primary"></ion-checkbox><ion-label>Techado</ion-label></ion-item>
+          <ion-item><ion-checkbox slot="start" checked="true" color="primary"></ion-checkbox><ion-label>Cámaras de seguridad</ion-label></ion-item>
+          <ion-item><ion-checkbox slot="start" color="primary"></ion-checkbox><ion-label>Carga eléctrica</ion-label></ion-item>
+          <ion-item><ion-checkbox slot="start" checked="true" color="primary"></ion-checkbox><ion-label>Acceso 24/7</ion-label></ion-item>
+          <ion-item><ion-checkbox slot="start" color="primary"></ion-checkbox><ion-label>Portón automático</ion-label></ion-item>
+          <ion-item lines="none"><ion-checkbox slot="start" color="primary"></ion-checkbox><ion-label>Guardia presencial</ion-label></ion-item>
+        </ion-list>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Precio</ion-card-title></ion-card-header>
+        <div class="card-hint">Puedes activar más de una modalidad de arriendo.</div>
+        <div style="display:flex;gap:10px;padding:0 16px 16px;">
+          <div class="price-card active"><div class="label">Por hora</div><div class="val">$1.200</div></div>
+          <div class="price-card active"><div class="label">Por día</div><div class="val">$8.000</div></div>
+          <div class="price-card"><div class="label">Por mes</div><div class="val">—</div></div>
+        </div>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Horarios disponibles</ion-card-title></ion-card-header>
+        <div class="card-hint">Días de la semana en que tu espacio estará disponible.</div>
+        <div style="padding:0 16px 16px;">
+          <ion-segment value="LMMJV" scrollable>
+            <ion-segment-button value="L" color="primary"><ion-label>L</ion-label></ion-segment-button>
+            <ion-segment-button value="M1" color="primary"><ion-label>M</ion-label></ion-segment-button>
+            <ion-segment-button value="M2" color="primary"><ion-label>M</ion-label></ion-segment-button>
+            <ion-segment-button value="J" color="primary"><ion-label>J</ion-label></ion-segment-button>
+            <ion-segment-button value="V" color="primary"><ion-label>V</ion-label></ion-segment-button>
+            <ion-segment-button value="S"><ion-label>S</ion-label></ion-segment-button>
+            <ion-segment-button value="D"><ion-label>D</ion-label></ion-segment-button>
+          </ion-segment>
+          <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+            <ion-chip color="primary">08:00</ion-chip>
+            <ion-chip color="primary">10:00</ion-chip>
+            <ion-chip color="primary">12:00</ion-chip>
+            <ion-chip color="primary">14:00</ion-chip>
+            <ion-chip color="primary">16:00</ion-chip>
+            <ion-chip color="primary">18:00</ion-chip>
+            <ion-chip outline>20:00</ion-chip>
+          </div>
+        </div>
+      </ion-card>
+
+      <div style="text-align:center;font-size:10.5px;color:var(--ash);font-weight:600;letter-spacing:.03em;margin:18px 0 8px;">VISTA PREVIA DE TU PUBLICACIÓN</div>
+      <ion-card>
+        <div class="preview-photo">
+          <ion-badge color="primary" style="position:absolute;top:8px;left:8px;">Disponible</ion-badge>
+          <ion-icon name="car-sport-outline" style="font-size:40px;color:var(--emerald);"></ion-icon>
+        </div>
+        <ion-card-content>
+          <div style="font-size:14px;font-weight:600;">Espacio en Av. Providencia 1650</div>
+          <div style="font-size:12px;color:var(--ink-soft);margin-top:2px;">Providencia, RM</div>
+          <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;">
+            <ion-chip outline style="height:20px;font-size:10.5px;">Techado</ion-chip>
+            <ion-chip outline style="height:20px;font-size:10.5px;">Cámaras</ion-chip>
+            <ion-chip outline style="height:20px;font-size:10.5px;">24/7</ion-chip>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
+            <div style="font-weight:700;color:var(--emerald-dark);">$1.200 <span style="font-size:11px;font-weight:500;color:var(--ink-soft);">/ hora</span></div>
+            <div style="font-weight:700;color:var(--emerald-dark);">$8.000 <span style="font-size:11px;font-weight:500;color:var(--ink-soft);">/ día</span></div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <div class="ion-padding-horizontal ion-padding-bottom">
+        <ion-button expand="block" color="primary">Publicar espacio</ion-button>
+        <ion-button expand="block" fill="clear" color="medium" size="small">Guardar como borrador</ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-app>
+</body>
+</html>

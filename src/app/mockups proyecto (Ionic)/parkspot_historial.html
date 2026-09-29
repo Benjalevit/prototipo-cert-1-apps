@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+<title>ParkSpot — mis reservas (Ionic)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/css/ionic.bundle.css"/>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.2.2/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@7.8.0/dist/ionic/ionic.js"></script>
+<style>
+:root{
+  --ion-font-family:'Inter',sans-serif;
+  --ion-color-primary:#0B8457;--ion-color-primary-rgb:11,132,87;--ion-color-primary-contrast:#ffffff;
+  --ion-color-primary-contrast-rgb:255,255,255;--ion-color-primary-shade:#066241;--ion-color-primary-tint:#26935f;
+  --ion-background-color:#ffffff;--ion-text-color:#16241C;
+  --emerald:#0B8457;--emerald-dark:#066241;--emerald-pale:#E4F3EB;
+  --ash:#7C917D;--ash-light:#DCE6DC;--ink:#16241C;--ink-soft:#57685B;--border:#E1E8E1;--bg-soft:#F3F8F4;
+}
+h1{font-family:'Space Grotesk',sans-serif;}
+.section-label{font-size:11.5px;font-weight:600;color:var(--ash);letter-spacing:.02em;margin:18px 0 8px;}
+.res-thumb{width:44px;height:44px;border-radius:10px;background:var(--emerald-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.res-thumb.muted{background:var(--bg-soft);}
+</style>
+</head>
+<body>
+<ion-app>
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>Mis reservas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="ion-padding">
+      <p style="font-size:13.5px;color:var(--ink-soft);margin-top:0;">Revisa tus reservas activas, pasadas y repite las que más usas.</p>
+
+      <ion-segment value="todas" scrollable color="primary">
+        <ion-segment-button value="todas"><ion-label>Todas (6)</ion-label></ion-segment-button>
+        <ion-segment-button value="encurso"><ion-label>En curso (1)</ion-label></ion-segment-button>
+        <ion-segment-button value="proximas"><ion-label>Próximas (1)</ion-label></ion-segment-button>
+        <ion-segment-button value="finalizadas"><ion-label>Finalizadas (3)</ion-label></ion-segment-button>
+        <ion-segment-button value="canceladas"><ion-label>Canceladas (1)</ion-label></ion-segment-button>
+      </ion-segment>
+
+      <div class="section-label">HOY</div>
+      <ion-card style="margin:0 0 10px;">
+        <ion-item lines="none">
+          <div class="res-thumb" slot="start"><ion-icon name="car-sport-outline" style="color:var(--emerald);font-size:20px;"></ion-icon></div>
+          <ion-label>
+            <h3 style="font-size:14px;font-weight:600;">Estacionamiento subterráneo Av. Providencia</h3>
+            <p style="font-size:12.5px;color:var(--ink-soft);">Hoy · 14:00 — 18:00 · Auto</p>
+          </ion-label>
+          <div slot="end" style="text-align:right;">
+            <ion-badge color="primary" style="border-radius:14px;">En curso</ion-badge>
+            <div style="font-size:13.5px;font-weight:600;margin-top:6px;">$5.100</div>
+          </div>
+        </ion-item>
+      </ion-card>
+
+      <div class="section-label">PRÓXIMAS</div>
+      <ion-card style="margin:0 0 10px;">
+        <ion-item lines="none">
+          <div class="res-thumb" slot="start"><ion-icon name="car-sport-outline" style="color:var(--emerald);font-size:20px;"></ion-icon></div>
+          <ion-label>
+            <h3 style="font-size:14px;font-weight:600;">Edificio Costanera, box subterráneo</h3>
+            <p style="font-size:12.5px;color:var(--ink-soft);">Vie 12 de septiembre · 09:00 — 18:00 · Auto</p>
+          </ion-label>
+          <div slot="end" style="text-align:right;">
+            <ion-badge color="tertiary" style="--background:var(--emerald-pale);--color:var(--emerald-dark);border-radius:14px;">Confirmada</ion-badge>
+            <div style="font-size:13.5px;font-weight:600;margin-top:6px;">$9.000</div>
+          </div>
+        </ion-item>
+      </ion-card>
+
+      <div class="section-label">HISTORIAL</div>
+
+      <ion-card style="margin:0 0 10px;">
+        <ion-item lines="none">
+          <div class="res-thumb muted" slot="start"><ion-icon name="car-sport-outline" style="color:var(--ash);font-size:20px;"></ion-icon></div>
+          <ion-label>
+            <h3 style="font-size:14px;font-weight:600;">Patio particular, calle Bilbao</h3>
+            <p style="font-size:12.5px;color:var(--ink-soft);">28 de agosto · 10:00 — 13:00 · Auto</p>
+          </ion-label>
+          <div slot="end" style="text-align:right;">
+            <ion-badge color="medium" style="border-radius:14px;">Finalizada</ion-badge>
+            <div style="font-size:13.5px;font-weight:600;margin-top:6px;">$2.100</div>
+          </div>
+        </ion-item>
+        <ion-button expand="block" fill="clear" size="small" color="primary">Reservar de nuevo</ion-button>
+      </ion-card>
+
+      <ion-card style="margin:0 0 10px;">
+        <ion-item lines="none">
+          <div class="res-thumb muted" slot="start"><ion-icon name="car-sport-outline" style="color:var(--ash);font-size:20px;"></ion-icon></div>
+          <ion-label>
+            <h3 style="font-size:14px;font-weight:600;">Estacionamiento subterráneo Av. Providencia</h3>
+            <p style="font-size:12.5px;color:var(--ink-soft);">20 de agosto · 08:00 — 12:00 · Auto</p>
+          </ion-label>
+          <div slot="end" style="text-align:right;">
+            <ion-badge color="medium" style="border-radius:14px;">Finalizada</ion-badge>
+            <div style="font-size:13.5px;font-weight:600;margin-top:6px;">$4.800</div>
+          </div>
+        </ion-item>
+        <ion-button expand="block" fill="clear" size="small" color="primary">Reservar de nuevo</ion-button>
+      </ion-card>
+
+      <ion-card style="margin:0 0 10px;">
+        <ion-item lines="none">
+          <div class="res-thumb muted" slot="start"><ion-icon name="bus-outline" style="color:var(--ash);font-size:20px;"></ion-icon></div>
+          <ion-label>
+            <h3 style="font-size:14px;font-weight:600;">Galpón Suecia, sector poniente</h3>
+            <p style="font-size:12.5px;color:var(--ink-soft);">14 de agosto · 15:00 — 19:00 · Camioneta</p>
+          </ion-label>
+          <div slot="end" style="text-align:right;">
+            <ion-badge color="medium" style="border-radius:14px;">Finalizada</ion-badge>
+            <div style="font-size:13.5px;font-weight:600;margin-top:6px;">$3.600</div>
+          </div>
+        </ion-item>
+        <ion-button expand="block" fill="clear" size="small" color="primary">Reservar de nuevo</ion-button>
+      </ion-card>
+
+      <ion-card style="margin:0 0 10px;">
+        <ion-item lines="none">
+          <div class="res-thumb muted" slot="start"><ion-icon name="car-sport-outline" style="color:var(--ash);font-size:20px;"></ion-icon></div>
+          <ion-label>
+            <h3 style="font-size:14px;font-weight:600;">Edificio Costanera, box subterráneo</h3>
+            <p style="font-size:12.5px;color:var(--ink-soft);">2 de agosto · 09:00 — 11:00 · Auto</p>
+          </ion-label>
+          <div slot="end" style="text-align:right;">
+            <ion-badge color="danger" style="--background:#F5EAE8;--color:#9A5B4C;border-radius:14px;">Cancelada</ion-badge>
+            <div style="font-size:13.5px;font-weight:600;margin-top:6px;">$0</div>
+          </div>
+        </ion-item>
+        <ion-button expand="block" fill="clear" size="small" color="medium">Ver detalle</ion-button>
+      </ion-card>
+
+    </div>
+  </ion-content>
+
+  <ion-tab-bar slot="bottom" color="light">
+    <ion-tab-button tab="buscar"><ion-icon name="search"></ion-icon><ion-label>Buscar</ion-label></ion-tab-button>
+    <ion-tab-button tab="publicar"><ion-icon name="add-circle-outline"></ion-icon><ion-label>Publicar</ion-label></ion-tab-button>
+    <ion-tab-button tab="reservas" selected><ion-icon name="time"></ion-icon><ion-label>Reservas</ion-label></ion-tab-button>
+    <ion-tab-button tab="perfil"><ion-icon name="person-outline"></ion-icon><ion-label>Perfil</ion-label></ion-tab-button>
+  </ion-tab-bar>
+
+</ion-app>
+</body>
+</html>
