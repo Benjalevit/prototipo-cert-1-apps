@@ -1,4 +1,4 @@
-import { CurrencyPipe, DatePipe, TitleCasePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe, NgFor, TitleCasePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -34,6 +34,7 @@ import {
   imports: [
     CurrencyPipe,
     DatePipe,
+    NgFor,
     FormsModule,
     TitleCasePipe,
     RouterLink,
