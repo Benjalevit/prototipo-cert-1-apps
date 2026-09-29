@@ -15,3 +15,6 @@
   .summary-row b{color:var(--ink);font-weight:500;}
   .summary-total{display:flex;justify-content:space-between;font-size:16px;font-weight:600;}
   .summary-total span:last-child{color:var(--emerald-dark);}
+  .vehicle-card{background:#fff;color:var(--ink);cursor:pointer;min-width:95px;}
+  .validation{color:var(--ion-color-danger);font-size:12px;margin-top:10px;}
+  hr{border:none;border-top:1px solid var(--border);margin:12px 0;}

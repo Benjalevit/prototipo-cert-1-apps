@@ -17,3 +17,5 @@ h1,h2{font-family:'Space Grotesk',sans-serif;}
 .price-card .label{font-size:11px;color:var(--ink-soft);font-weight:600;margin-bottom:6px;}
 .price-card .val{font-size:15px;font-weight:700;}
 .preview-photo{height:110px;background:var(--emerald-pale);display:flex;align-items:center;justify-content:center;position:relative;}
+.field-error{color:var(--ion-color-danger);font-size:12px;padding:5px 16px 9px;}
+.price-preview{padding:10px 16px 16px;color:var(--emerald-dark);font-weight:700;text-align:right;}

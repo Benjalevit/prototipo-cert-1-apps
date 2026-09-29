@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { CurrencyPipe, NgFor } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { EstacionamientoService } from '../../services/estacionamiento.service';
 import {
   IonAvatar,
   IonBackButton,
@@ -27,6 +29,8 @@ import {
   templateUrl: './detalle.page.html',
   styleUrls: ['./detalle.page.scss'],
   imports: [
+    CurrencyPipe,
+    NgFor,
     RouterLink,
     IonAvatar,
     IonBackButton,
@@ -48,4 +52,9 @@ import {
     IonToolbar,
   ],
 })
-export class DetallePage {}
+export class DetallePage {
+  private readonly service = inject(EstacionamientoService);
+  private readonly route = inject(ActivatedRoute);
+  readonly estacionamiento = this.service.obtenerPorId(this.route.snapshot.queryParamMap.get('id')) ?? this.service.obtenerSeleccionado();
+  constructor() { this.service.seleccionar(this.estacionamiento.id); }
+}

@@ -24,14 +24,11 @@
   </div>
 
   <div class="title-block">
-    <h1>Estacionamiento subterráneo Av. Providencia</h1>
-    <div class="address">Av. Providencia 1650, Providencia · a 220 m de Metro Los Leones</div>
+    <h1>{{ estacionamiento.titulo }}</h1>
+    <div class="address">{{ estacionamiento.direccion }}, {{ estacionamiento.comuna }} · {{ estacionamiento.referencia }}</div>
     <div class="rating"><ion-icon name="star" color="warning"></ion-icon> 4.8 <span>(126 reseñas)</span></div>
     <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;">
-      <ion-chip outline color="primary">Techado</ion-chip>
-      <ion-chip outline color="primary">Cámaras 24/7</ion-chip>
-      <ion-chip outline color="primary">Control remoto</ion-chip>
-      <ion-chip outline color="primary">Iluminado</ion-chip>
+      <ion-chip *ngFor="let caracteristica of estacionamiento.caracteristicas" outline color="primary">{{ caracteristica }}</ion-chip>
     </div>
   </div>
 
@@ -124,7 +121,7 @@
   <ion-toolbar>
     <div class="booking-footer">
       <div>
-        <div class="booking-price">$1.200 <span>/ hora</span></div>
+        <div class="booking-price">{{ estacionamiento.precioHora | currency:'CLP':'symbol-narrow':'1.0-0' }} <span>/ hora</span></div>
         <div style="font-size:11px;color:var(--ink-soft);">Cancelación gratuita 1h antes</div>
       </div>
       <ion-button color="primary" routerLink="/reserva">Reservar ahora</ion-button>
