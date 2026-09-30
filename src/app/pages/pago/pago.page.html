@@ -1,0 +1,127 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/reserva" color="dark"></ion-back-button>
+      </ion-buttons>
+      <ion-title size="small">Pago</ion-title>
+    </ion-toolbar>
+    <ion-progress-bar value="1" color="primary"></ion-progress-bar>
+  </ion-header>
+
+  <ion-content>
+    <div class="ion-padding">
+      <div style="font-size:12.5px;color:var(--ink-soft);">Estacionamiento subterráneo Av. Providencia</div>
+      <h1 style="font-size:20px;font-weight:600;margin:2px 0 18px;">Elige tu método de pago</h1>
+
+      <ion-segment value="tarjeta" color="primary">
+        <ion-segment-button value="tarjeta">
+          <ion-icon name="card-outline"></ion-icon>
+          <ion-label>Tarjeta</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="transferencia">
+          <ion-icon name="swap-horizontal-outline"></ion-icon>
+          <ion-label>Transferencia</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="webpay">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <ion-label>Webpay</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <ion-card>
+        <ion-list lines="full">
+          <ion-item>
+            <ion-label position="stacked">Número de tarjeta</ion-label>
+            <ion-input value="4051 8842 0192 3456" inputmode="numeric"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Vencimiento</ion-label>
+            <ion-input value="08 / 29"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="stacked">CVV</ion-label>
+            <ion-input value="123" type="password"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div style="display:flex;gap:6px;padding:0 16px 14px;">
+          <ion-chip outline style="font-size:10px;height:20px;">Visa</ion-chip>
+          <ion-chip outline style="font-size:10px;height:20px;">Mastercard</ion-chip>
+          <ion-chip outline style="font-size:10px;height:20px;">Redcompra</ion-chip>
+        </div>
+        <ion-item lines="none">
+          <ion-label position="stacked">Nombre del titular</ion-label>
+          <ion-input value="Benjamín Bravo"></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Facturación</ion-card-title></ion-card-header>
+        <ion-item lines="none">
+          <ion-label position="stacked">RUT o boleta</ion-label>
+          <ion-input value="Boleta electrónica a mi nombre"></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header><ion-card-title style="font-size:15px;">Resumen de tu reserva</ion-card-title></ion-card-header>
+        <ion-card-content>
+          <div class="summary-row"><span>Fecha</span><b>Lun 7 de septiembre</b></div>
+          <div class="summary-row"><span>Horario</span><b>14:00 — 18:00</b></div>
+          <div class="summary-row"><span>Vehículo</span><b>Auto</b></div>
+          <hr style="border:none;border-top:1px solid var(--border);margin:10px 0;">
+          <div class="summary-row"><span>4 horas × $1.200</span><b>$4.800</b></div>
+          <div class="summary-row"><span>Tarifa de servicio</span><b>$300</b></div>
+          <hr style="border:none;border-top:1px solid var(--border);margin:10px 0;">
+          <div class="summary-total"><span>Total a pagar</span><span>$5.100</span></div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="lock-closed-outline" color="medium"></ion-icon>
+        <ion-label class="ion-text-wrap" style="font-size:12px;color:var(--ink-soft);">Pago seguro y encriptado</ion-label>
+      </ion-item>
+
+      <hr style="border:none;border-top:1px dashed var(--border);margin:34px 0 20px;">
+      <div style="text-align:center;font-size:11px;font-weight:600;color:var(--ash);letter-spacing:.03em;margin-bottom:16px;">VISTA POSTERIOR AL PAGO</div>
+
+      <div class="confirm-card">
+        <div class="confirm-check"><ion-icon name="checkmark" style="color:#fff;font-size:22px;"></ion-icon></div>
+        <h2 style="font-size:18px;font-weight:600;margin:0 0 4px;">¡Reserva confirmada!</h2>
+        <p style="font-size:13px;color:var(--ink-soft);margin:0 0 14px;">Muestra este código al llegar o escanea el QR en el acceso del estacionamiento.</p>
+
+        <ion-grid style="text-align:left;">
+          <ion-row>
+            <ion-col size="6"><div style="font-size:10.5px;color:var(--ash);font-weight:600;">LUGAR</div><div style="font-size:13px;">Av. Providencia</div></ion-col>
+            <ion-col size="6"><div style="font-size:10.5px;color:var(--ash);font-weight:600;">FECHA</div><div style="font-size:13px;">Lun 7 sept</div></ion-col>
+            <ion-col size="6"><div style="font-size:10.5px;color:var(--ash);font-weight:600;">HORARIO</div><div style="font-size:13px;">14:00 — 18:00</div></ion-col>
+            <ion-col size="6"><div style="font-size:10.5px;color:var(--ash);font-weight:600;">TOTAL PAGADO</div><div style="font-size:13px;">$5.100</div></ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <div class="qr-box">
+          <div class="qr-grid">
+            <div class="qr-cell on"></div><div class="qr-cell on"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell on"></div><div class="qr-cell on"></div>
+            <div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div>
+            <div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div>
+            <div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell"></div>
+            <div class="qr-cell on"></div><div class="qr-cell on"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell"></div><div class="qr-cell on"></div><div class="qr-cell on"></div><div class="qr-cell on"></div>
+          </div>
+          <div style="font-size:11px;color:var(--ink-soft);">Código de acceso</div>
+          <b style="display:block;font-size:15px;font-family:'Space Grotesk',sans-serif;letter-spacing:.06em;">PS-284719</b>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:18px;">
+          <ion-button expand="block" fill="solid" color="primary" size="small">Agregar al calendario</ion-button>
+          <ion-button expand="block" fill="outline" color="medium" size="small">Descargar comprobante</ion-button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <div class="ion-padding-horizontal ion-padding-bottom">
+        <ion-button expand="block" color="primary" routerLink="/activa">Pagar $5.100</ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>

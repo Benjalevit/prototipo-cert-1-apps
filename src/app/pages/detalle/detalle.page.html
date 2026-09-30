@@ -1,0 +1,130 @@
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Detalle del espacio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="heart-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+
+  <div class="gallery">
+    <div class="g-main">
+      <ion-icon class="gallery-icon" name="car-sport-outline"></ion-icon>
+      <div class="g-count">1 / 12 fotos</div>
+    </div>
+    <div class="g-thumb"><ion-icon class="thumb-icon" name="image-outline"></ion-icon></div>
+    <div class="g-thumb"><ion-icon class="thumb-icon" name="apps-outline"></ion-icon></div>
+  </div>
+
+  <div class="title-block">
+    <h1>{{ estacionamiento.titulo }}</h1>
+    <div class="address">{{ estacionamiento.direccion }}, {{ estacionamiento.comuna }} · {{ estacionamiento.referencia }}</div>
+    <div class="rating"><ion-icon name="star" color="warning"></ion-icon> 4.8 <span>(126 reseñas)</span></div>
+    <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;">
+      <ion-chip *ngFor="let caracteristica of estacionamiento.caracteristicas" outline color="primary">{{ caracteristica }}</ion-chip>
+    </div>
+  </div>
+
+  <div class="ion-padding">
+
+    <h2 style="font-size:16px;font-weight:600;">Dimensiones y tipo de vehículo</h2>
+    <ion-grid style="padding:0;">
+      <ion-row>
+        <ion-col size="4">
+          <div class="dim-card active">
+            <ion-icon class="vehicle-icon" name="car-sport-outline"></ion-icon>
+            <div class="label">Auto</div>
+            <div class="sub">Hasta 4,9 m</div>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="dim-card active">
+            <ion-icon class="vehicle-icon" name="bus-outline"></ion-icon>
+            <div class="label">Camioneta</div>
+            <div class="sub">Hasta 5,4 m</div>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="dim-card">
+            <ion-icon class="vehicle-icon muted" name="bicycle-outline"></ion-icon>
+            <div class="label">Moto</div>
+            <div class="sub">No disponible</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <h2 style="font-size:16px;font-weight:600;margin-top:22px;">Reglas de uso</h2>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-icon slot="start" name="checkmark-circle" color="primary"></ion-icon>
+        <ion-label class="ion-text-wrap" style="font-size:13.5px;">Ingreso y salida disponibles las 24 horas mediante código QR.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="checkmark-circle" color="primary"></ion-icon>
+        <ion-label class="ion-text-wrap" style="font-size:13.5px;">Extensión de horario permitida desde la app hasta 15 minutos antes del cierre de la reserva.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="close-circle" color="medium"></ion-icon>
+        <ion-label class="ion-text-wrap" style="font-size:13.5px;">No se permite el uso del espacio fuera del bloque horario reservado.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="close-circle" color="medium"></ion-icon>
+        <ion-label class="ion-text-wrap" style="font-size:13.5px;"><b>Cancelación gratuita</b> hasta 1 hora antes del inicio de la reserva.</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <h2 style="font-size:16px;font-weight:600;margin-top:10px;">Disponibilidad</h2>
+    <ion-datetime presentation="date" locale="es-CL" value="2026-09-07" style="border:1px solid var(--border);border-radius:12px;"></ion-datetime>
+
+    <div class="hours-row" style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+      <ion-chip class="hour-chip" outline>08:00</ion-chip>
+      <ion-chip class="hour-chip" outline>10:00</ion-chip>
+      <ion-chip class="hour-chip" outline>12:00</ion-chip>
+      <ion-chip class="hour-chip" color="primary">14:00</ion-chip>
+      <ion-chip class="hour-chip" color="primary">16:00</ion-chip>
+      <ion-chip class="hour-chip" outline>18:00</ion-chip>
+      <ion-chip class="hour-chip" outline>20:00</ion-chip>
+    </div>
+
+    <h2 style="font-size:16px;font-weight:600;margin-top:22px;">★ 4.8 · 126 reseñas</h2>
+    <ion-list lines="full">
+      <ion-item>
+        <ion-avatar slot="start"><div style="width:100%;height:100%;background:var(--ash-light);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--emerald-dark);">MJ</div></ion-avatar>
+        <ion-label class="ion-text-wrap">
+          <h3 style="font-size:13.5px;font-weight:600;">Manuel J. <span style="float:right;color:var(--emerald);font-size:12px;">★★★★★</span></h3>
+          <p style="font-size:12px;color:var(--ink-soft);">Agosto 2026</p>
+          <p style="font-size:13.5px;">Súper fácil de encontrar y el acceso con QR funcionó perfecto.</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start"><div style="width:100%;height:100%;background:var(--ash-light);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--emerald-dark);">CT</div></ion-avatar>
+        <ion-label class="ion-text-wrap">
+          <h3 style="font-size:13.5px;font-weight:600;">Carolina T. <span style="float:right;color:var(--emerald);font-size:12px;">★★★★★</span></h3>
+          <p style="font-size:12px;color:var(--ink-soft);">Julio 2026</p>
+          <p style="font-size:13.5px;">Buena iluminación y cámaras visibles, me sentí segura dejando el auto varias horas.</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="booking-footer">
+      <div>
+        <div class="booking-price">{{ estacionamiento.precioHora | currency:'CLP':'symbol-narrow':'1.0-0' }} <span>/ hora</span></div>
+        <div style="font-size:11px;color:var(--ink-soft);">Cancelación gratuita 1h antes</div>
+      </div>
+      <ion-button color="primary" routerLink="/reserva">Reservar ahora</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
