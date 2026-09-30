@@ -1,4 +1,4 @@
-import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -38,8 +38,6 @@ import {
   styleUrls: ['./publicar.page.scss'],
   imports: [
     CurrencyPipe,
-    NgIf,
-    NgFor,
     ReactiveFormsModule,
     RouterLink,
     IonBackButton,
